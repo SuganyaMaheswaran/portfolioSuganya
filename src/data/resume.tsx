@@ -50,7 +50,7 @@ export const DATA = {
       // },
       X: {
         name: "X",
-        url: "https://x.com/Suganyaa__",
+        url: "",
         icon: Icons.x,
 
         navbar: false,
