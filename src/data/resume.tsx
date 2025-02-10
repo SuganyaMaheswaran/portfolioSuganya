@@ -81,7 +81,7 @@ export const DATA = {
       href: "",
       badges: [],
       location: "Toronto, ON",
-      title: "Dispatcher/Adminstrator",
+      title: "Data Analyst (CO-OP)",
       logoUrl: "/facedrive.jpg",
       start: "March 2019",
       end: "February 2020",
