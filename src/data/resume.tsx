@@ -36,7 +36,7 @@ export const DATA = {
     social: {
       GitHub: {
         name: "GitHub",
-        url: "https://github.com/Suganya1990",
+        url: "https://github.com/Suganyamaheswaran",
         icon: Icons.github,
 
         navbar: true,
@@ -81,7 +81,7 @@ export const DATA = {
       href: "",
       badges: [],
       location: "Toronto, ON",
-      title: "Data Analyst (CO-OP)",
+      title: "Customer & Driver Support",
       logoUrl: "/facedrive.jpg",
       start: "March 2019",
       end: "February 2020",
