@@ -122,16 +122,8 @@ export const DATA = {
       logoUrl: "/seneca-logo.svg",
       start: "2017",
       end: "2020",
-    },
-    {
-      school: "Toronto Metropolitan University",
-      href: "https://www.torontomu.ca/",
-      degree: "Bachelor's Accounting (Finished 2nd Year) ",
-      logoUrl: "/tmu_logo",
-      start: "2010",
-      end: "2012",
-    },
-  ],
+ }
+ ],
   projects: [
     {
       title: "Weather App ",
