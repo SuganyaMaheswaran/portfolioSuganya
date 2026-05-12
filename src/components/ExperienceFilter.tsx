@@ -17,6 +17,8 @@ interface ExperienceFilterProps {
   onFilterChange: (filter: FilterType) => void;
 }
 
+const APPLE_BLUE = "#007AFF";
+
 const filters: { label: string; value: FilterType }[] = [
   { label: 'All', value: 'all' },
   { label: 'Technical', value: 'technical' },
@@ -52,13 +54,13 @@ export default function ExperienceFilter({
             <motion.button
               key={filter.value}
               onClick={() => onFilterChange(filter.value)}
-              whileHover={{ scale: 1.04 }}
+              whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               className="px-4 py-2 rounded-full text-sm font-medium transition-all duration-200"
               style={{
-                backgroundColor: isActive ? colors.accent : colors.surface,
-                color: isActive ? '#FFFFFF' : colors.text.secondary,
-                border: `1px solid ${isActive ? colors.accent : colors.border}`,
+                backgroundColor: isActive ? APPLE_BLUE : "#FFFFFF",
+                color: isActive ? "#FFFFFF" : APPLE_BLUE,
+                border: `1px solid ${APPLE_BLUE}`,
               }}
             >
               {filter.label}

@@ -9,5 +9,8 @@
 
   body {
     @apply antialiased;
+   
+  background: #F5F5F7;
+
   }
 }
