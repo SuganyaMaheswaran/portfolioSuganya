@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Suganya Maheswaran",
@@ -25,7 +22,7 @@ export default function RootLayout({
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body className={`${inter.className} bg-white text-gray-900`}>
+      <body className="bg-white text-gray-900">
         <div className="max-w-4xl mx-auto px-6 py-12 sm:py-24">
           {children}
         </div>

@@ -20,19 +20,19 @@ export default function Home() {
         <h2 className="text-3xl font-bold mb-8">About</h2>
         <div className="space-y-6 max-w-3xl">
           <p className="text-lg text-gray-700 leading-relaxed">
-            I'm a cloud engineer and systems thinker who's spent the last several years building tools and infrastructure that simplify complexity. I work best when the problem is fuzzy—when the real challenge isn't in the code, but in understanding what needs to be solved and why.
+            I&apos;m a cloud engineer and systems thinker who&apos;s spent the last several years building tools and infrastructure that simplify complexity. I work best when the problem is fuzzy—when the real challenge isn&apos;t in the code, but in understanding what needs to be solved and why.
           </p>
 
           <p className="text-lg text-gray-700 leading-relaxed">
-            I'm most interested in systems that are confusing, slow, or inconsistent. I approach problems by asking what's actually being asked, rather than building what was requested.
+            I&apos;m most interested in systems that are confusing, slow, or inconsistent. I approach problems by asking what&apos;s actually being asked, rather than building what was requested.
           </p>
 
           <p className="text-lg text-gray-700 leading-relaxed">
-            Across my work in government, enterprise systems, and startups, I've been placed in situations where the problem wasn't building something new—it was making something existing easier to understand and use. That's shaped how I think about engineering: clarity first, systems thinking second, code last.
+            Across my work in government, enterprise systems, and startups, I&apos;ve been placed in situations where the problem wasn&apos;t building something new—it was making something existing easier to understand and use. That&apos;s shaped how I think about engineering: clarity first, systems thinking second, code last.
           </p>
 
           <p className="text-lg text-gray-700 leading-relaxed">
-            I focus on reducing unnecessary complexity, creating structure where there's ambiguity, and building systems that degrade gracefully instead of failing catastrophically. The best solutions are boring and predictable—they work quietly in the background.
+            I focus on reducing unnecessary complexity, creating structure where there&apos;s ambiguity, and building systems that degrade gracefully instead of failing catastrophically. The best solutions are boring and predictable—they work quietly in the background.
           </p>
         </div>
       </section>
@@ -44,14 +44,14 @@ export default function Home() {
           <div>
             <h3 className="text-2xl font-bold mb-3">Fragments Microservice</h3>
             <p className="text-gray-700 leading-relaxed">
-              Designed and built a microservice architecture to handle fragmented data workflows. The system decouples complex processes into manageable, independently deployable services. Focus was on fault tolerance, clear contracts between services, and reducing cascading failures. This project reinforced that good architecture is about making the system's behavior predictable and failures visible.
+              Designed and built a microservice architecture to handle fragmented data workflows. The system decouples complex processes into manageable, independently deployable services. Focus was on fault tolerance, clear contracts between services, and reducing cascading failures. This project reinforced that good architecture is about making the system&apos;s behavior predictable and failures visible.
             </p>
           </div>
 
           <div>
             <h3 className="text-2xl font-bold mb-3">SettleCAN</h3>
             <p className="text-gray-700 leading-relaxed">
-              Currently building a rule-based system that transforms fragmented, unstructured immigration data into clear timelines and actionable tasks. The system codifies complex workflows, handles edge cases gracefully, and reduces uncertainty through explicit logic. This is systems thinking at its core—defining what's actually happening, documenting the rules, and building tools that enforce clarity.
+              Currently building a rule-based system that transforms fragmented, unstructured immigration data into clear timelines and actionable tasks. The system codifies complex workflows, handles edge cases gracefully, and reduces uncertainty through explicit logic. This is systems thinking at its core—defining what&apos;s actually happening, documenting the rules, and building tools that enforce clarity.
             </p>
           </div>
 
@@ -80,6 +80,7 @@ export default function Home() {
         <nav className="flex flex-wrap gap-6 text-gray-700 mb-8">
           <a href="/" className="hover:text-gray-900 transition-colors">Home</a>
           <a href="/blog" className="hover:text-gray-900 transition-colors">Blog</a>
+          <a href="/map" className="hover:text-gray-900 transition-colors">Map</a>
           <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900 transition-colors">GitHub</a>
           <a href="mailto:suganya@example.com" className="hover:text-gray-900 transition-colors">Email</a>
         </nav>
