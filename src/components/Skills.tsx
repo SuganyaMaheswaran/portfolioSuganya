@@ -15,7 +15,14 @@ import {
   SiDocker
 } from "react-icons/si";
 
-import { FaAws, FaTerminal, FaUniversalAccess, FaBug } from "react-icons/fa";
+import {
+  FaAws,
+  FaCloud,
+  FaTerminal,
+  FaUniversalAccess,
+  FaBug
+} from "react-icons/fa";
+
 import { BsBarChartFill } from "react-icons/bs";
 
 const skills = [
@@ -30,7 +37,7 @@ const skills = [
 
   { name: "AWS", icon: FaAws },
   { name: "Google Cloud", icon: SiGooglecloud },
-
+  { name: "Azure", icon: FaCloud },
 
   { name: "Docker", icon: SiDocker },
   { name: "Firebase", icon: SiFirebase },
@@ -46,57 +53,51 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section className="py-12">
-      <h2 className="text-3xl font-bold mb-8">Skills</h2>
+    <section className="py-6">
+      <h2 className="text-3xl font-bold mb-5">Skills</h2>
 
-      <div className="grid grid-cols-3 md:grid-cols-5 gap-3 max-w-3xl">
-        {skills.map((skill) => {
-          const Icon = skill.icon;
-
-          return (
-            <div
-              key={skill.name}
+      <div className="grid grid-cols-4 md:grid-cols-6 gap-3 max-w-3xl">
+        {skills.map(({ name, icon: Icon }) => (
+          <div
+            key={name}
+            className="
+              group
+              aspect-square
+              flex flex-col items-center justify-center
+              cursor-pointer
+            "
+          >
+            {/* Icon */}
+            <Icon
               className="
-                group
-                aspect-square
-                flex items-center justify-center
-                relative
-                cursor-pointer
+                text-4xl
+                text-gray-400
+                grayscale
+                transition-all
+                duration-200
+                group-hover:grayscale-0
+                group-hover:text-gray-800
+                group-hover:scale-110
               "
-            >
-              {/* Icon */}
-              <Icon
-                className="
-                  text-2xl
-                  text-gray-400
-                  grayscale
-                  group-hover:grayscale-0
-                  group-hover:text-gray-800
-                  group-hover:scale-110
-                  transition-all
-                  duration-300
-                "
-              />
+            />
 
-              {/* Tooltip */}
-              <div
-                className="
-                  absolute -bottom-2
-                  text-[10px] tracking-wide
-                  text-gray-500
-                  opacity-0
-                  translate-y-1
-                  group-hover:opacity-100
-                  group-hover:translate-y-0
-                  transition-all
-                  duration-300
-                "
-              >
-                {skill.name}
-              </div>
-            </div>
-          );
-        })}
+            {/* Label (8px spacing) */}
+            <span
+              className="
+                mt-2
+                text-[11px]
+                text-gray-500
+                opacity-0
+                group-hover:opacity-100
+                transition-opacity
+                duration-200
+              "
+              style={{ marginTop: "8px" }}
+            >
+              {name}
+            </span>
+          </div>
+        ))}
       </div>
     </section>
   );
