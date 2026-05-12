@@ -14,7 +14,7 @@ export default function MapExplorer() {
 
   if (withCoords.length === 0) {
     return (
-      <section className="py-20">
+      <section className="py-12">
         <h2 className="text-3xl font-bold mb-4">Exploration Map</h2>
         <p className="text-gray-600">No location data available.</p>
       </section>
@@ -33,7 +33,7 @@ export default function MapExplorer() {
   const latRange = maxLat - minLat || 1;
 
   return (
-    <section className="py-20">
+    <section className="py-12">
       <div className="mb-12">
         <h2 className="text-3xl font-bold mb-4">Exploration Map</h2>
         <p className="text-gray-600 max-w-2xl">

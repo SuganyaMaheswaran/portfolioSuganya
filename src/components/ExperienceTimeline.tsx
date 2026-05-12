@@ -54,7 +54,7 @@ export default function ExperienceTimeline() {
   };
 
   return (
-    <section className="py-20 w-full">
+    <section className="py-12 w-full">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -74,7 +74,7 @@ export default function ExperienceTimeline() {
       {/* Two-Column Layout */}
       <div className="grid md:grid-cols-3 gap-8 h-[70vh]">
         {/* Left Column: Timeline - Compact Scrollable */}
-        <div className="md:col-span-1 bg-gray-50 border border-gray-200 rounded-lg overflow-y-auto">
+         <div className="md:col-span-1 bg-gray-50 border border-gray-200 rounded-lg h-full overflow-y-auto">
           <div>
             {filteredExperiences.length > 0 ? (
               filteredExperiences.map((experience) => (
@@ -102,7 +102,7 @@ export default function ExperienceTimeline() {
         </div>
 
         {/* Right Column: Details Panel */}
-        <div className="md:col-span-2 bg-white border border-gray-200 rounded-lg p-8 overflow-y-auto">
+          <div className="md:col-span-2 bg-white border border-gray-200 rounded-lg p-8 h-full overflow-y-auto">
           <ExperienceDetailsPanel experience={selectedExperience} />
         </div>
       </div>

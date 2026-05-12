@@ -1,3 +1,4 @@
+'use client';
 import { motion } from 'framer-motion';
 import ExperienceTimeline from '@/components/ExperienceTimeline';
 
@@ -5,7 +6,13 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="mb-20">
+      <motion.section
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: true, amount: 0.4 }}
+  className="mb-20"
+>
         <div>
           <h1 className="text-5xl font-bold mb-4">Suganya Maheswaran</h1>
           <p className="text-2xl text-gray-600 mb-6">Cloud Full-Stack Engineer & Systems Problem Solver</p>
@@ -13,10 +20,16 @@ export default function Home() {
             I build software that turns complex, fragmented systems into simple, reliable tools.
           </p>
         </div>
-      </section>
+      </motion.section>
 
       {/* About */}
-      <section className="mb-20">
+     <motion.section
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: true, amount: 0.3 }}
+  className="mb-20"
+>
         <h2 className="text-3xl font-bold mb-8">About</h2>
         <div className="space-y-6 max-w-3xl">
           <p className="text-lg text-gray-700 leading-relaxed">
@@ -35,40 +48,106 @@ export default function Home() {
             I focus on reducing unnecessary complexity, creating structure where there&apos;s ambiguity, and building systems that degrade gracefully instead of failing catastrophically. The best solutions are boring and predictable—they work quietly in the background.
           </p>
         </div>
-      </section>
+      </motion.section>
 
       {/* Selected Work */}
-      <section className="mb-20">
-        <h2 className="text-3xl font-bold mb-12">Selected Work</h2>
-        <div className="space-y-12 max-w-3xl">
-          <div>
-            <h3 className="text-2xl font-bold mb-3">Fragments Microservice</h3>
-            <p className="text-gray-700 leading-relaxed">
-              Designed and built a microservice architecture to handle fragmented data workflows. The system decouples complex processes into manageable, independently deployable services. Focus was on fault tolerance, clear contracts between services, and reducing cascading failures. This project reinforced that good architecture is about making the system&apos;s behavior predictable and failures visible.
-            </p>
-          </div>
+     <motion.section
+  initial={{ opacity: 0, y: 60 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.7 }}
+  viewport={{ once: true, amount: 0.2 }}
+  className="mb-20"
+>
+  <h2 className="text-3xl font-bold mb-12">Selected Work</h2>
 
-          <div>
-            <h3 className="text-2xl font-bold mb-3">SettleCAN</h3>
-            <p className="text-gray-700 leading-relaxed">
-              Currently building a rule-based system that transforms fragmented, unstructured immigration data into clear timelines and actionable tasks. The system codifies complex workflows, handles edge cases gracefully, and reduces uncertainty through explicit logic. This is systems thinking at its core—defining what&apos;s actually happening, documenting the rules, and building tools that enforce clarity.
-            </p>
-          </div>
+  <div className="space-y-12 max-w-3xl">
 
-          <div>
-            <h3 className="text-2xl font-bold mb-3">Sprott ETF Tracker</h3>
-            <p className="text-gray-700 leading-relaxed">
-              Built an ETL pipeline that automates financial data extraction, transformation, and visualization. The problem was manual reporting: error-prone, slow, hard to scale. The solution was a reliable, automated pipeline that runs silently. This taught me that infrastructure is invisible—the best systems are the ones you never think about because they just work.
-            </p>
-          </div>
-        </div>
-      </section>
+    {/* Project 1 */}
+    <div>
+      <h3 className="text-2xl font-bold mb-3">Fragments Microservice</h3>
+
+      <p className="text-gray-700 leading-relaxed mb-3">
+        Designed and built a microservice architecture to handle fragmented data workflows. The system decouples complex processes into manageable, independently deployable services. Focus was on fault tolerance, clear contracts between services, and reducing cascading failures.
+      </p>
+
+      <div className="flex gap-4 text-sm">
+        <a
+          href="https://github.com/your-repo/fragments"
+          target="_blank"
+          className="text-blue-600 hover:underline"
+        >
+          GitHub
+        </a>
+        <a
+          href="https://your-live-link.com/fragments"
+          target="_blank"
+          className="text-blue-600 hover:underline"
+        >
+          Live
+        </a>
+      </div>
+    </div>
+
+    {/* Project 2 */}
+    <div>
+      <h3 className="text-2xl font-bold mb-3">SettleCAN</h3>
+
+      <p className="text-gray-700 leading-relaxed mb-3">
+        Currently building a rule-based system that transforms fragmented immigration data into clear timelines and actionable tasks. The system codifies complex workflows, handles edge cases gracefully, and reduces uncertainty through explicit logic.
+      </p>
+
+      <div className="flex gap-4 text-sm">
+        <a
+          href="https://github.com/your-repo/settlecan"
+          target="_blank"
+          className="text-blue-600 hover:underline"
+        >
+          GitHub
+        </a>
+        <a
+          href="https://your-live-link.com/settlecan"
+          target="_blank"
+          className="text-blue-600 hover:underline"
+        >
+          Live
+        </a>
+      </div>
+    </div>
+
+    {/* Project 3 */}
+    <div>
+      <h3 className="text-2xl font-bold mb-3">Sprott ETF Tracker</h3>
+
+      <p className="text-gray-700 leading-relaxed mb-3">
+        Built an ETL pipeline that automates financial data extraction, transformation, and visualization. The solution replaces manual reporting with a reliable automated pipeline that runs silently in production.
+      </p>
+
+      <div className="flex gap-4 text-sm">
+        <a
+          href="https://github.com/your-repo/etf-tracker"
+          target="_blank"
+          className="text-blue-600 hover:underline"
+        >
+          GitHub
+        </a>
+        <a
+          href="https://your-live-link.com/etf-tracker"
+          target="_blank"
+          className="text-blue-600 hover:underline"
+        >
+          Live
+        </a>
+      </div>
+    </div>
+
+  </div>
+</motion.section>
 
       {/* Experience Timeline */}
       <ExperienceTimeline />
 
       {/* Skills */}
-      <section className="py-20">
+      <section className="py-12">
         <h2 className="text-3xl font-bold mb-8">Skills</h2>
         <p className="text-lg text-gray-700 leading-relaxed max-w-3xl">
           React · Angular · TypeScript · Node.js · SQL · Python · AWS · Docker · Power BI
