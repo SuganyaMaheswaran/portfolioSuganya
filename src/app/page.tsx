@@ -72,45 +72,26 @@ export default function Home() {
 
       <div className="flex gap-4 text-sm">
         <a
-          href="https://github.com/your-repo/fragments"
+          href="https://github.com/SuganyaMaheswaran/fragments"
           target="_blank"
           className="text-blue-600 hover:underline"
         >
           GitHub
         </a>
-        <a
-          href="https://your-live-link.com/fragments"
-          target="_blank"
-          className="text-blue-600 hover:underline"
-        >
-          Live
-        </a>
+
       </div>
     </div>
 
     {/* Project 2 */}
     <div>
-      <h3 className="text-2xl font-bold mb-3">SettleCAN</h3>
+      <h3 className="text-2xl font-bold mb-3">SettleCAN Currently Building</h3>
 
       <p className="text-gray-700 leading-relaxed mb-3">
         Currently building a rule-based system that transforms fragmented immigration data into clear timelines and actionable tasks. The system codifies complex workflows, handles edge cases gracefully, and reduces uncertainty through explicit logic.
       </p>
 
       <div className="flex gap-4 text-sm">
-        <a
-          href="https://github.com/your-repo/settlecan"
-          target="_blank"
-          className="text-blue-600 hover:underline"
-        >
-          GitHub
-        </a>
-        <a
-          href="https://your-live-link.com/settlecan"
-          target="_blank"
-          className="text-blue-600 hover:underline"
-        >
-          Live
-        </a>
+      
       </div>
     </div>
 
@@ -124,19 +105,19 @@ export default function Home() {
 
       <div className="flex gap-4 text-sm">
         <a
-          href="https://github.com/your-repo/etf-tracker"
+          href="https://github.com/SuganyaMaheswaran/etf-extractor-etl-dashboard"
           target="_blank"
           className="text-blue-600 hover:underline"
         >
           GitHub
         </a>
-        <a
+        {/* <a
           href="https://your-live-link.com/etf-tracker"
           target="_blank"
           className="text-blue-600 hover:underline"
         >
           Live
-        </a>
+        </a> */}
       </div>
     </div>
 
