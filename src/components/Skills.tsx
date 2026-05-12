@@ -24,6 +24,9 @@ import {
 } from "react-icons/fa";
 
 import { BsBarChartFill } from "react-icons/bs";
+import { colors } from "@/styles/tokens";
+
+const APPLE_BLUE = "#007AFF";
 
 const skills = [
   { name: "HTML5", icon: SiHtml5 },
@@ -53,51 +56,63 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section className="py-6">
-      <h2 className="text-3xl font-bold mb-5">Skills</h2>
+    <section className="py-10">
 
-      <div className="grid grid-cols-4 md:grid-cols-6 gap-3 max-w-3xl">
+      <h2
+        className="text-3xl font-bold mb-6"
+        style={{ color: colors.text.primary }}
+      >
+        Skills
+      </h2>
+
+      <div className="grid grid-cols-4 md:grid-cols-6 gap-8 max-w-3xl">
+
         {skills.map(({ name, icon: Icon }) => (
           <div
             key={name}
-            className="
-              group
-              aspect-square
-              flex flex-col items-center justify-center
-              cursor-pointer
-            "
+            className="group flex flex-col items-center justify-center"
           >
             {/* Icon */}
             <Icon
               className="
                 text-4xl
-                text-gray-400
-                grayscale
-                transition-all
-                duration-200
-                group-hover:grayscale-0
-                group-hover:text-gray-800
+                transition-all duration-200
                 group-hover:scale-110
               "
+              style={{
+                color: colors.text.muted,
+              }}
             />
 
-            {/* Label (8px spacing) */}
+            {/* Label */}
             <span
               className="
                 mt-2
                 text-[11px]
-                text-gray-500
                 opacity-0
                 group-hover:opacity-100
-                transition-opacity
-                duration-200
+                transition-all duration-200
               "
-              style={{ marginTop: "8px" }}
+              style={{
+                color: colors.text.secondary,
+              }}
             >
               {name}
             </span>
+
+            {/* Hover color override layer */}
+            <style jsx>{`
+              .group:hover svg {
+                color: ${APPLE_BLUE} !important;
+              }
+
+              .group:hover span {
+                color: ${APPLE_BLUE} !important;
+              }
+            `}</style>
           </div>
         ))}
+
       </div>
     </section>
   );

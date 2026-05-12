@@ -1,8 +1,16 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { colors } from '@/styles/tokens';
 
-export type FilterType = 'all' | 'technical' | 'non_technical' | 'hybrid' | 'customer_service' | 'volunteer' | 'operations';
+export type FilterType =
+  | 'all'
+  | 'technical'
+  | 'non_technical'
+  | 'hybrid'
+  | 'customer_service'
+  | 'volunteer'
+  | 'operations';
 
 interface ExperienceFilterProps {
   activeFilter: FilterType;
@@ -25,25 +33,39 @@ export default function ExperienceFilter({
 }: ExperienceFilterProps) {
   return (
     <div className="mb-12">
-      <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-4">
+
+      {/* Label */}
+      <p
+        className="text-sm font-semibold uppercase tracking-wide mb-4"
+        style={{ color: colors.text.muted }}
+      >
         Filter by Category
       </p>
+
+      {/* Pills */}
       <div className="flex flex-wrap gap-3">
-        {filters.map((filter) => (
-          <motion.button
-            key={filter.value}
-            onClick={() => onFilterChange(filter.value)}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-              activeFilter === filter.value
-                ? 'bg-gray-900 text-white shadow-md'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-            }`}
-          >
-            {filter.label}
-          </motion.button>
-        ))}
+
+        {filters.map((filter) => {
+          const isActive = activeFilter === filter.value;
+
+          return (
+            <motion.button
+              key={filter.value}
+              onClick={() => onFilterChange(filter.value)}
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
+              className="px-4 py-2 rounded-full text-sm font-medium transition-all duration-200"
+              style={{
+                backgroundColor: isActive ? colors.accent : colors.surface,
+                color: isActive ? '#FFFFFF' : colors.text.secondary,
+                border: `1px solid ${isActive ? colors.accent : colors.border}`,
+              }}
+            >
+              {filter.label}
+            </motion.button>
+          );
+        })}
+
       </div>
     </div>
   );
