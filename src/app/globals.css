@@ -13,4 +13,7 @@
   background: #F5F5F7;
 
   }
+  html {
+  scroll-behavior: smooth;
+}
 }

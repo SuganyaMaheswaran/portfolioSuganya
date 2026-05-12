@@ -10,7 +10,7 @@ import type { Experience } from '@/data/experiences';
 import { colors } from '@/styles/tokens';
 
 export default function ExperienceTimeline() {
-  const [activeFilter, setActiveFilter] = useState<FilterType>('all');
+  const [activeFilter, setActiveFilter] = useState<FilterType>('technical');
 
   const filteredExperiences = useMemo(() => {
     let filtered: Experience[];
