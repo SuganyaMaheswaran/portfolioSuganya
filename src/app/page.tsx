@@ -1,7 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import ExperienceTimeline from '@/components/ExperienceTimeline';
-
+import Skills from '@/components/Skills';
 export default function Home() {
   return (
     <>
@@ -147,12 +147,7 @@ export default function Home() {
       <ExperienceTimeline />
 
       {/* Skills */}
-      <section className="py-12">
-        <h2 className="text-3xl font-bold mb-8">Skills</h2>
-        <p className="text-lg text-gray-700 leading-relaxed max-w-3xl">
-          React · Angular · TypeScript · Node.js · SQL · Python · AWS · Docker · Power BI
-        </p>
-      </section>
+     <Skills />
 
       {/* Footer */}
       <footer className="mt-32 pt-8 border-t border-gray-200">
