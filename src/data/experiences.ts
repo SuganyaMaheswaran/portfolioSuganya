@@ -352,47 +352,6 @@ export const experiences: Experience[] = [
   //   tags: ["training", "full_stack", "projects", "self_learning"]
   // },
 
- {
-  id: "solution-community",
-  company: "Solution Community",
-  title: "Full Stack Developer",
-  location: "Remote",
-  coordinates: { lat: 43.6629, lng: -79.3957 },
-  startYear: 2024,
-  endYear: null,
-  current: true,
-  volunteer: true,
-  roleCategory: "technical",
-  summary: "Full-stack development for a community-driven web platform.",
-  description:
-    "Contributing to the development and maintenance of a community-based web application using React, Node.js, PostgreSQL, and Google Cloud, with a focus on feature development, system reliability, and production support.",
-
-  responsibilities: [
-    "Developed and maintained frontend features using React and TypeScript",
-    "Built and integrated RESTful APIs using Node.js and PostgreSQL",
-    "Debugged production issues using Google Cloud logging and monitoring tools",
-    "Investigated system errors and performance issues through log analysis",
-    "Supported deployment workflows and environment troubleshooting",
-    "Collaborated on improving application stability and user experience"
-  ],
-
-  achievements: [
-    "Resolved production issues by analyzing logs and identifying backend and frontend failure points",
-    "Improved system reliability through structured debugging and monitoring practices"
-  ],
-
-  technologies: [
-    "React",
-    "TypeScript",
-    "Node.js",
-    "PostgreSQL",
-    "Google Cloud Platform (Logging, Monitoring)",
-    "Firebase"
-  ],
-
-  tags: ["volunteer", "development", "full_stack", "cloud", "debugging"]
-},
-
   {
     id: "seniors-tech-support",
     company: "Seniors Digital Literacy Support",

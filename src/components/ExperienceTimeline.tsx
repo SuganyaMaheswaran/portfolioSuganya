@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { experiences } from '@/data/experiences';
 import TimelineItem from './TimelineItem';
 import ExperienceDetailsPanel from './ExperienceDetailsPanel';
@@ -11,6 +11,7 @@ import { colors } from '@/styles/tokens';
 
 export default function ExperienceTimeline() {
   const [activeFilter, setActiveFilter] = useState<FilterType>('technical');
+  const [expandedId, setExpandedId] = useState<string | null>(null);
 
   const filteredExperiences = useMemo(() => {
     let filtered: Experience[];
@@ -88,8 +89,8 @@ export default function ExperienceTimeline() {
         onFilterChange={setActiveFilter}
       />
 
-      {/* Layout */}
-      <div className="grid md:grid-cols-3 gap-8 h-[70vh]">
+      {/* Desktop Layout - Side by Side */}
+      <div className="hidden md:grid md:grid-cols-3 gap-8 md:h-[70vh]">
 
         {/* Timeline */}
         <div
@@ -133,7 +134,7 @@ export default function ExperienceTimeline() {
 
         {/* Details Panel */}
         <div
-          className="md:col-span-2 h-full overflow-y-auto rounded-xl border"
+          className="col-span-2 h-full overflow-y-auto rounded-xl border"
           style={{
             backgroundColor: colors.bg,
             borderColor: colors.border,
@@ -142,6 +143,150 @@ export default function ExperienceTimeline() {
           <ExperienceDetailsPanel experience={selectedExperience} />
         </div>
 
+      </div>
+
+      {/* Mobile Layout - Expandable Cards */}
+      <div className="md:hidden space-y-2">
+        {filteredExperiences.length > 0 ? (
+          filteredExperiences.map((experience) => {
+            const yearRange = experience.endYear
+              ? `${experience.startYear} - ${experience.endYear}`
+              : `${experience.startYear} - Present`;
+
+            return (
+              <motion.div
+                key={experience.id}
+                className="rounded-xl border overflow-hidden"
+                style={{
+                  backgroundColor: expandedId === experience.id ? colors.bg : '#FFFFFF',
+                  borderColor: colors.border,
+                }}
+              >
+                <button
+                  onClick={() => setExpandedId(expandedId === experience.id ? null : experience.id)}
+                  className="w-full text-left p-4 transition-all duration-200 flex items-start justify-between hover:bg-gray-100"
+                  style={{
+                    backgroundColor: expandedId === experience.id ? colors.bg : '#FFFFFF',
+                  }}
+                  onMouseEnter={(e) => {
+                    if (expandedId !== experience.id) {
+                      e.currentTarget.style.backgroundColor = '#F3F3F3';
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (expandedId !== experience.id) {
+                      e.currentTarget.style.backgroundColor = '#FFFFFF';
+                    }
+                  }}
+                >
+                  <div className="flex-1">
+                    <TimelineItem
+                      experience={experience}
+                      index={0}
+                      isAlternate={false}
+                      onClick={() => setExpandedId(expandedId === experience.id ? null : experience.id)}
+                    />
+                  </div>
+                  <motion.div
+                    animate={{ rotate: expandedId === experience.id ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="flex-shrink-0 ml-2 text-lg"
+                    style={{ color: colors.text.secondary }}
+                  >
+                    ↓
+                  </motion.div>
+                </button>
+
+                <AnimatePresence>
+                  {expandedId === experience.id && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="border-t px-4 py-3 space-y-3"
+                      style={{ borderColor: colors.border, backgroundColor: colors.bg }}
+                    >
+                      {/* Description */}
+                      <div>
+                        <h3
+                          className="text-sm font-semibold mb-2"
+                          style={{ color: colors.text.primary }}
+                        >
+                          About This Role
+                        </h3>
+                        <p
+                          className="text-xs leading-relaxed"
+                          style={{ color: colors.text.secondary }}
+                        >
+                          {experience.description}
+                        </p>
+                      </div>
+
+                      {/* Achievements */}
+                      {experience.achievements.length > 0 && (
+                        <div>
+                          <h3
+                            className="text-sm font-semibold mb-2"
+                            style={{ color: colors.text.primary }}
+                          >
+                            Achievements
+                          </h3>
+                          <ul className="space-y-1 text-xs">
+                            {experience.achievements.map((item, idx) => (
+                              <li
+                                key={idx}
+                                className="flex gap-2"
+                                style={{ color: colors.text.secondary }}
+                              >
+                                <span style={{ color: colors.accent, fontWeight: 700 }}>✓</span>
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      {/* Technologies */}
+                      {experience.technologies.length > 0 && (
+                        <div>
+                          <h3
+                            className="text-sm font-semibold mb-2"
+                            style={{ color: colors.text.primary }}
+                          >
+                            Technologies
+                          </h3>
+                          <div className="flex flex-wrap gap-2">
+                            {experience.technologies.slice(0, 4).map((tech, idx) => (
+                              <span
+                                key={idx}
+                                className="px-2 py-1 rounded text-xs"
+                                style={{
+                                  backgroundColor: colors.surface,
+                                  color: colors.text.secondary,
+                                  border: `1px solid ${colors.border}`
+                                }}
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })
+        ) : (
+          <p
+            className="text-center py-12 px-4"
+            style={{ color: colors.text.muted }}
+          >
+            No experiences found for this filter.
+          </p>
+        )}
       </div>
     </section>
   );

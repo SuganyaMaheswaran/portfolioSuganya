@@ -18,22 +18,22 @@ export default function Home() {
 >
 
   {/* Identity */}
-  <div className="mb-6">
+  <div className="mt-4 mb-12 pb-4 border-b" style={{ borderColor: colors.border }}>
     <h1
-      className="text-5xl font-bold tracking-tight"
+      className="text-6xl md:text-7xl font-bold tracking-tight mb-6"
       style={{ color: colors.text.primary }}
     >
       Suganya Maheswaran
     </h1>
 
     <p
-      className="text-2xl mt-3"
-      style={{ color: colors.text.secondary }}
+      className="text-2xl md:text-3xl mb-6"
+      style={{ color: colors.accent }}
     >
       Cloud Full-Stack Engineer & Systems Problem Solver
     </p>
 
-    <p className="text-sm mt-4" style={{ color: "#6B7280" }}>
+    <p className="text-base md:text-lg" style={{ color: "#6B7280" }}>
       Government • Enterprise • Startup systems
     </p>
   </div>
@@ -55,7 +55,7 @@ export default function Home() {
     </p>
   </div>
 
- <div className="flex items-center justify-between mt-8">
+ <div className="flex items-center justify-center mt-8">
 
     <div className="flex items-center gap-4">
 
