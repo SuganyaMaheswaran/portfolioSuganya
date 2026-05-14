@@ -388,5 +388,63 @@ technologies: [
   "Online banking platforms"
 ],
     tags: ["volunteer", "support", "education", "customer_service"]
-  }
+  },
+  {
+  id: "solution-community",
+  company: "Solution Community",
+  title: "Frontend Developer / Community Platform Contributor",
+  location: "Remote",
+  coordinates: { lat: 43.6532, lng: -79.3832 },
+  startYear: 2025,
+  endYear: null,
+  current: true,
+  roleCategory: "technical",
+
+  summary:
+    "Contributing to a community-focused platform through frontend development, debugging support, collaboration, and deployment workflows.",
+
+  description:
+    "Contributed to development and maintenance of the Solution Community platform using modern frontend technologies. Worked closely with team members to troubleshoot issues, improve development workflows, support debugging efforts, and assist with Git/GitHub integration and deployment processes.",
+
+  responsibilities: [
+    "Developed and maintained frontend platform features using React, Next.js, and TypeScript",
+    "Collaborated with team members to troubleshoot and debug application issues",
+    "Assisted developers with Git and GitHub workflows including branching, commits, merges, and repository setup",
+    "Supported integration of backend APIs and frontend state management",
+    "Helped diagnose runtime, rendering, and deployment-related issues",
+    "Participated in improving UI consistency and component structure",
+    "Supported testing and validation of new platform functionality",
+    "Worked within collaborative agile-style development workflows"
+  ],
+
+  achievements: [
+    "Became a key support contributor for debugging and technical problem-solving within the team",
+    "Helped team members resolve GitHub integration and repository management issues",
+    "Assisted with stabilizing frontend workflows and resolving runtime errors",
+    "Contributed to ongoing development of a production-scale community platform",
+    "Supported onboarding and technical setup for collaborative development processes"
+  ],
+
+  technologies: [
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Firebase",
+    "Git",
+    "GitHub",
+    "REST APIs",
+    "Tailwind CSS"
+  ],
+
+  tags: [
+    "frontend",
+    "react",
+    "nextjs",
+    "debugging",
+    "collaboration",
+    "github",
+    "typescript",
+    "firebase"
+  ]
+}
 ];
